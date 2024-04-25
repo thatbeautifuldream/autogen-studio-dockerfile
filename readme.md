@@ -2,20 +2,26 @@
 
 This repository contains a dockerfile which can be used to build a docker image for the Autogen Studio. The docker image can be used to run the Autogen Studio in a docker container.
 
-## Building the docker image
+## Docker compose does the building and deployment of the image
 
-To build the docker image, run the following command in the root of this repository:
+The docker-compose.yml file contains the configuration for building the docker image and running the docker container. The docker-compose.yml file contains the following services:
 
-```bash
-docker build -t autogenstudio .
-```
+1. **autogen-studio**: This service builds the docker image for the Autogen Studio and runs the docker container.
 
-## Running the docker image
-
-To run the docker image, run the following command:
+You just need to run the following command to build the docker image and run the docker container:
 
 ```bash
-docker run -it --rm -p 8081:8081 autogenstudio -e "OPENAI_API_KEY=your_openai_api_key"
+docker-compose up
 ```
 
-The Autogen Studio will be available at http://localhost:8081.
+Add --detach to run the container in the background:
+
+```bash
+docker-compose up --detach
+```
+
+To stop the container, run the following command:
+
+```bash
+docker-compose down
+```

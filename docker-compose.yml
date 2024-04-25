@@ -4,5 +4,3 @@ services:
     image: autogenstudio
     ports:
       - "8081:8081"
-    environment:
-      - OPENAI_API_KEY=your_openai_api_key
