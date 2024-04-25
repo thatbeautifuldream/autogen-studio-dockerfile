@@ -1,6 +1,10 @@
+version: "3.8"
+
 services:
   autogenstudio:
-    build: .
-    image: autogenstudio
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: autogenstudio:latest
     ports:
       - "8081:8081"
