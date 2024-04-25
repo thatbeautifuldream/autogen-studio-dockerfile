@@ -3,6 +3,6 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: autogenstudio:latest
+    image: autogenstudio
     ports:
       - "8081:8081"
